@@ -316,7 +316,7 @@ header {
   .focus-class-inner {
     .focus-class-content {
       margin-bottom: 40px;
-      .focus-class-items {
+      @at-root .focus-class-items {
         /* Custom CSS : Slick - 아이템 간격 조절*/
         .slide-list {
           margin: 0 -5px;
@@ -737,12 +737,12 @@ footer {
   }
 }
 
-/* ######################## Category Main : category-main.html ###############################*/
+/* ############## Category Main : category-main.html ######### */
 .category-class {
   .category-class-inner {
     .category-class-main {
-      width: 100%;
       height: 120px;
+      width: 100%;
       position: relative;
       border-radius: 10px;
       overflow: hidden;
@@ -751,25 +751,90 @@ footer {
         left: 40px;
         top: 50%;
         transform: translateY(-50%);
-        font-size: 28px;
-        color: $white;
+        color: #eee;
         font-family: $secondary-kr;
       }
       img {
-        height: inherit;
         width: inherit;
+        height: inherit;
         object-fit: cover;
       }
     }
     .category-class-detail {
+      margin: 30px 0;
+      padding-bottom: 30px;
+      border-bottom: 1px solid $dim-gray;
       h3 {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      .category-shortcut-btn-group {
+        .btn-shortcut {
+          border: none;
+          font-size: 13px;
+          border-radius: 30px;
+          padding: 5px 15px;
+          margin-right: 7px;
+          background-color: transparent;
+          border: 1px solid $dark-gray;
+          &.active {
+            background-color: $dark-black;
+            color: #eee;
+          }
+        }
       }
     }
     .category-class-sort {
+      > * {
+        font-size: 14px;
+        border: 1px solid $silver-gray;
+        cursor: pointer;
+        height: 40px;
+        width: 110px;
+        margin-right: 5px;
+        text-align: center;
+      }
+      margin-bottom: 30px;
+      select {
+        appearance: none;
+        background: url("/images/icon-select.svg") no-repeat center right 10px;
+        background-size: 12px;
+      }
+      button {
+        background-color: transparent;
+        border-radius: 3px;
+        &.btn-earlybird {
+          border-color: $tomato;
+          color: $tomato;
+        }
+      }
     }
     .category-class-wrap {
+      .focus-class-items {
+        margin-bottom: 50px;
+      }
     }
     .paging {
+      display: flex;
+      justify-content: center;
+      button {
+        background-color: transparent;
+        border: none;
+      }
+      > button {
+        margin: 0 10px;
+        font-size: 18px;
+        transform: translateY(-3px);
+      }
+      .btn-paging-group {
+        .btn-paging {
+          &.active {
+            background-color: $dark-black;
+            border-radius: 3px;
+            color: #eee;
+          }
+        }
+      }
     }
   }
 }

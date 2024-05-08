@@ -33,6 +33,16 @@ $(function () {
     $(this).toggleClass("active");
   });
 
+  /* Category Detail Buttons*/
+  $(".btn-shortcut").click(function () {
+    $(this).addClass("active");
+    $(this).siblings().removeClass("active");
+  });
+
+  $(".btn-earlybird").click(function () {
+    $(this).addClass("active");
+  });
+
   /* Front Slider */
   $(".front-slider-items").slick({
     infinity: true,
