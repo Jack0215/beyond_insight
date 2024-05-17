@@ -8,7 +8,33 @@ $(function () {
     $("section").click(function () {
       $(".mega-navi").stop().slideUp();
     });
+
+    /* Member Register */
+    $(".toggle-pw").click(function () {
+      // Toggle Icon Shape
+      $(this).toggleClass("bi-eye");
+      // Toggle Input Type
+
+      var inputType = $(this).parent().children("input").attr("type");
+      if (inputType == "password") {
+        $(this).parent().children("input").attr("type", "text");
+      } else {
+        $(this).parent().children("input").attr("type", "password");
+      }
+    });
+
+    /* Header Login Modal */
+    $(".btn-login, .login-member a").click(function () {
+      $(".member-login-overlay").fadeIn();
+      $("body").addClass("active");
+    });
+
+    $(".member-login .btn-modal-close").click(function () {
+      $(".member-login-overlay").fadeOut();
+      $("body").removeClass("active");
+    });
   });
+
   $(".footer-include").load("/include/footer.html");
   /* Scroll Header Fixed*/
   $(window).scroll(function () {
@@ -43,8 +69,43 @@ $(function () {
     $(this).addClass("active");
   });
 
+  /* Take Course & Cart Check All Function */
+  $(".cart-item .btn-clear ").click(function () {
+    $(this).parents(".cart-item").hide();
+  });
+
+  $(".cart-wrap .btn-all-clear").click(function () {
+    $(".cart-item").hide();
+  });
+
+  $(".cart-chk-all").click(function () {
+    $(".check-status .cart-chk").prop("checked", this.checked);
+  });
+
+  /* Class Share Modal */
+  $(".btn-sidebar-badge.share").click(function () {
+    $(".class-share-overlay").fadeIn();
+    $("body").addClass("active");
+  });
+  $(".class-share .btn-modal-close").click(function () {
+    $(".class-share-overlay").fadeOut();
+    $("body").removeClass("active");
+  });
+  $(".share-choice-item.share-link").click(function () {
+    $(".copied-link").show();
+
+    setTimeout(function () {
+      $(".copied-link").hide();
+    }, 1000);
+  });
+
+  /* Class Detail Navigation */
+  $(".class-detail-navigation a").click(function () {
+    $(this).addClass("active").siblings().removeClass("active");
+  });
+
   /* Front Slider */
-  $(".front-slider-items").slick({
+  $(".class-share.front-slider-items").slick({
     infinity: true,
     arrows: false,
     dots: false,
