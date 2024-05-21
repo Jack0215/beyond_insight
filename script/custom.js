@@ -104,6 +104,12 @@ $(function () {
     $(this).addClass("active").siblings().removeClass("active");
   });
 
+  /* Class Curriculum */
+  $(".chapter-title").click(function () {
+    $(this).next().toggle();
+    $(this).toggleClass("active");
+  });
+
   /* Front Slider */
   $(".class-share.front-slider-items").slick({
     infinity: true,

@@ -1319,7 +1319,104 @@ footer {
 
         .class-curriculum {
           .class-detail-header {
-            border: 1px solid #000;
+            margin: 20px 0;
+            position: relative;
+            padding-left: 10px;
+            &::before {
+              content: "";
+              width: 4px;
+              height: 43px;
+              background-color: $crimson;
+              position: absolute;
+              left: 0;
+              top: 5px;
+            }
+          }
+          .class-detail-wrap {
+            .curriculum-basic-info.header {
+              background-color: $light-gray;
+              border-radius: 5px;
+              padding: 7px 15px;
+              font-weight: normal;
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 10px;
+            }
+
+            .curriculum-accordion {
+              .accordion-item-wrap {
+                .chapter-title {
+                  border-bottom: 1px solid $silver-gray;
+                  cursor: pointer;
+                  padding: 5px;
+                  display: flex;
+                  justify-content: space-between;
+                  &.active .chapter-subject::before {
+                    content: "\F63B";
+                    font-family: $bs-font;
+                    margin-right: 5px;
+                    font-weight: 600;
+                    display: inline-block;
+                    top: 50%;
+                    transform: translateY(2px);
+                  }
+                  .chapter-subject {
+                    color: $turquoise;
+                    font-weight: 500;
+                    &::before {
+                      content: "\F64D";
+                      font-family: $bs-font;
+                      margin-right: 5px;
+                      font-weight: 600;
+                      display: inline-block;
+                      top: 50%;
+                      transform: translateY(2px);
+                    }
+                  }
+
+                  .chapter-hour {
+                    font-weight: 500;
+                  }
+                }
+                .chapter-content {
+                  display: none;
+                  .chapter-content-class {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 5px;
+                    .class-subject {
+                      cursor: pointer;
+                      .bi {
+                        margin-right: 5px;
+                      }
+                    }
+                    .class-hour {
+                      .curriculum-badge.free {
+                        color: $forestgreen;
+                        font-size: 11px;
+                        background-color: $light-gray;
+                        border-radius: 3px;
+                        padding: 2px;
+                        font-weight: normal;
+                      }
+                      .class-hour-detail {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .curriculum-basic-info.footer {
+              text-align: center;
+              background-color: $light-gray;
+              border-radius: 5px;
+              padding: 7px 15px;
+              font-weight: normal;
+              color: $light-black;
+              font-size: 14px;
+              margin-top: 10px;
+            }
           }
         }
       }
