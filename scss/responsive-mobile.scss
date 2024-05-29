@@ -1,0 +1,387 @@
+// Import local SCSS Files
+@import "reset.scss", "variables.scss", "fonts.scss";
+
+/* Responsive for Mobile*/
+@media (max-width: 767px) {
+  //완료되면 지울 임시 CSS
+
+  /* ############### Common CSS ############### */
+
+  [class*="inner"] {
+    width: 100%;
+  }
+  .front-header {
+    h2 {
+      font-size: 20px;
+      padding-left: 5px;
+    }
+  }
+  section:not(.front-slider) {
+    // border: 1px solid #000;
+    padding: 35px 10px;
+  }
+
+  /* Header */
+  header {
+    .header-inner {
+      padding: 0 10px;
+      .logo {
+        img {
+        }
+      }
+      .search {
+        display: none;
+      }
+      .login-register-buttons {
+      }
+      .gnb {
+        a {
+          &:first-child::after {
+            display: none;
+          }
+        }
+        .trigger {
+          transform: translateY(-1px);
+          span {
+            display: none;
+          }
+          &::before {
+            content: "";
+            background: url("/images/icon-category-search.png");
+          }
+        }
+        .special-navi {
+          white-space: nowrap;
+          width: 360px;
+          overflow-y: hidden;
+        }
+      }
+    }
+
+    .mega-navi {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 300px;
+      height: 100vh;
+      padding-top: 60px;
+      .search-mobile {
+        display: block;
+        width: 95%;
+        margin: auto;
+      }
+      .mega-navi-inner {
+        flex-direction: column;
+        .mega-navi-item {
+          &:last-child b {
+            border: none;
+          }
+          b {
+            border-bottom: 1px solid $dim-black;
+            display: block;
+            padding: 5px 15px;
+            color: $dark-gray;
+            &::after {
+              content: "\f4fe";
+              font-family: $bs-font;
+              float: right;
+              font-weight: bold;
+              color: $silver-black;
+              font-size: 18px;
+            }
+            &.active {
+              color: $white;
+            }
+            &.active::after {
+              content: "\f2ea";
+              color: $white;
+            }
+          }
+          .mega-navi-item-wrap {
+            display: none;
+            padding: 15px 15px;
+          }
+        }
+      }
+      .btn-mega-navi-close {
+        display: block;
+        position: absolute;
+        border: none;
+        background-color: transparent;
+        color: $white;
+        top: 10px;
+        left: 10px;
+      }
+    }
+  }
+
+  /* Footer */
+  footer {
+    padding: 30px 0;
+    .footer-inner {
+      padding: 0px 20px;
+      .lnb-wrap {
+        flex-direction: column;
+        border: none;
+        gap: 50px;
+        .footer-slogan {
+          h2 {
+            text-align: center;
+            font-size: 1.8em;
+            color: $white;
+          }
+        }
+        .lnb {
+          flex-direction: column;
+          .link-item {
+            .link-item-title {
+              padding: 10px 0;
+              border-bottom: 1px solid $silver-black;
+              pointer-events: all;
+              &::after {
+                content: "\f282";
+                font-family: $bs-font;
+                float: right;
+                margin-right: 5px;
+              }
+              &.active::after {
+                transform: rotateX(180deg);
+              }
+            }
+            .link-item-content {
+              display: none;
+              padding: 5px 0;
+              a {
+                padding: 3px 0;
+              }
+            }
+          }
+        }
+      }
+      .copyright-wrap {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 10px;
+        address {
+          display: none;
+        }
+        .sns {
+          margin-top: 10px;
+        }
+        .company-info-trigger {
+          display: block;
+          color: $white;
+          font-weight: 400;
+          &::after {
+            content: "\f282";
+            font-family: $bs-font;
+            margin-left: 5px;
+          }
+          &.active::after {
+            display: inline-block;
+            transform: rotateX(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  /* ############### Front Page : index.html ############### */
+
+  /* Section : Front Slider */
+
+  .front-slider {
+    .front-slider-items {
+      .front-slider-item {
+        .front-slider-item-wrap {
+          flex-direction: column;
+          width: 100%;
+          .desc {
+            margin-top: 20px;
+            h1 {
+              font-size: 24px;
+              margin: 5px 0;
+            }
+          }
+          .pic {
+            img {
+              height: 50%;
+              transform: translateY(20px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Section : Category Shortcut*/
+
+  .category-shortcut {
+    .category-shortcut-inner {
+      .category-shortcut-items {
+        flex-wrap: wrap;
+        .category-shortcut-item {
+          flex-basis: 25%;
+          box-shadow: none;
+          height: auto;
+          span {
+            font-size: 14px;
+            padding: 0px 10px;
+          }
+        }
+      }
+    }
+  }
+
+  /* Section : foucs-class*/
+  .focus-class {
+    .focus-class-inner {
+      .focus-class-content {
+        overflow-x: hidden;
+        .focus-class-items {
+          width: 500px;
+          .focus-class-item {
+            .thum {
+              height: 120px;
+              img {
+              }
+            }
+            .overview {
+              h4 {
+                font-size: 14px;
+              }
+              .class-price {
+                transform: scale(0.8);
+                transform-origin: left;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Section : best-class*/
+  .best-class {
+    .best-class-inner {
+      .best-class-content {
+        .best-class-wrap {
+          flex-direction: column;
+          .invite-banner {
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+          .best-class-items-outer {
+            .best-class-items {
+              flex-direction: column;
+              margin-bottom: 10px;
+              .best-class-item {
+                margin-bottom: -10px;
+                .overview {
+                  .class-price {
+                    transform: scale(0.9);
+                    transform-origin: left;
+                    white-space: nowrap;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /* Section : Blog*/
+
+  /* Section : early-bird*/
+  .early-bird {
+    .early-bird-inner {
+      .early-bird-content {
+        font-size: 12px;
+        .countdown-wrap {
+          width: 100%;
+          #early-bird-countdown {
+            font-size: 24px;
+          }
+          margin-bottom: 20px;
+        }
+        .early-bird-banner {
+          flex-direction: column;
+          padding: 20px;
+          .banner-about {
+            h1 {
+              font-size: 18px;
+            }
+            .hash-tag {
+              font-size: 18px;
+            }
+          }
+          .banner-thum {
+            img {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Section : blog*/
+  .blog {
+    .blog-inner {
+      .blog-content {
+        .blog-items {
+          flex-direction: column;
+          .blog-items {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+  /* Section : slogan*/
+  .slogan {
+    padding: 20px 0 !important;
+    .slogan-inner {
+      .slogan-content {
+        padding: 0 20px;
+        h1 {
+          font-size: 24px;
+        }
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  /* Section : tip-tech*/
+  .tip-tech {
+    .tip-tech-inner {
+      .tip-tech-content {
+        .tip-tech-wrap {
+          .tip-tech-items {
+            flex-direction: column;
+            .thum {
+              display: none;
+            }
+            .tip-tech-info {
+              h3 {
+                font-size: 13px;
+              }
+              p {
+                font-size: 13px;
+              }
+            }
+          }
+        }
+        .btn-tip-tech {
+        }
+      }
+    }
+  }
+}
