@@ -35,10 +35,10 @@ input {
 /* Setting Variables : Text Color */
 /* Setting Variables : Object Color */
 /* Responsive for Mobile*/
-@media (max-width: 767px) {
+@media (min-width: 300px) and (max-width: 767px) {
   /* ############### Common CSS ############### */
   [class*="inner"] {
-    width: 100%;
+    width: 100% !important;
   }
   .front-header h2 {
     font-size: 20px;
@@ -51,8 +51,15 @@ input {
   header .header-inner {
     padding: 0 10px;
   }
-  header .header-inner .search {
+  header .header-inner .logo-search .logo img {
+    width: 190px;
+  }
+  header .header-inner .logo-search .search {
     display: none;
+  }
+  header .header-inner .logo-search .login-register-buttons {
+    button-font-size: 13px;
+    button-padding: 5px;
   }
   header .header-inner .gnb a:first-child::after {
     display: none;
@@ -70,7 +77,6 @@ input {
   }
   header .header-inner .gnb .special-navi {
     white-space: nowrap;
-    width: 360px;
     overflow-y: hidden;
   }
   header .mega-navi {
@@ -241,28 +247,35 @@ input {
     height: auto;
   }
   .category-shortcut .category-shortcut-inner .category-shortcut-items .category-shortcut-item span {
-    font-size: 14px;
-    padding: 0px 10px;
+    font-size: 13px;
+    padding: 0px 7px;
   }
   /* Section : foucs-class*/
   .focus-class .focus-class-inner .focus-class-content {
     overflow-x: hidden;
   }
-  .focus-class .focus-class-inner .focus-class-content .focus-class-items {
+  .focus-class-items {
     width: 500px;
   }
-  .focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .thum {
+  .focus-class-items .focus-class-item .thum {
     height: 120px;
   }
-  .focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview h4 {
-    font-size: 14px;
+  .focus-class-items .focus-class-item .overview h4 {
+    font-size: 12px;
   }
-  .focus-class .focus-class-inner .focus-class-content .focus-class-items .focus-class-item .overview .class-price {
-    -webkit-transform: scale(0.8);
-            transform: scale(0.8);
+  .focus-class-items .focus-class-item .overview .class-info {
+    font-size: 12px;
+    color: #999999;
+  }
+  .focus-class-items .focus-class-item .overview .class-price {
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
     -webkit-transform-origin: left;
             transform-origin: left;
     white-space: nowrap;
+  }
+  .focus-class-items .focus-class-item .overview .class-review {
+    font-size: 10px;
   }
   /* Section : best-class*/
   .best-class .best-class-inner .best-class-content .best-class-wrap {
@@ -358,5 +371,129 @@ input {
   }
   .tip-tech .tip-tech-inner .tip-tech-content .tip-tech-wrap .tip-tech-items .tip-tech-info p {
     font-size: 13px;
+  }
+  /* ############## Category Main : category-main.html ######### */
+  .category-class .category-class-inner .category-class-wrap {
+    overflow-x: hidden;
+  }
+  .category-class .category-class-inner .category-class-detail .category-shortcut-btn-group .btn-shortcut {
+    font-size: 12px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+  /* ############## Take Course & Cart : take-course.html ##############*/
+  .take-course {
+    padding: 0 !important;
+  }
+  .take-course .take-course-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+  }
+  .take-course .take-course-inner > div {
+    background-color: #ffffff;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 20px;
+  }
+  .take-course .take-course-inner .cart-wrap .cart-items .cart-item .thum {
+    width: 60px;
+  }
+  .take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0;
+  }
+  .take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail .cart-overview-price {
+    text-align: left;
+  }
+  .take-course .take-course-inner .cart-wrap .cart-items .cart-item .cart-overview .cart-overview-detail .cart-overview-price > * {
+    display: inline-block;
+  }
+  .take-course .take-course-inner .payment {
+    border-top: 1px dashed #dddddd;
+  }
+  /* ############## Class Detail : class-detail.html ##############*/
+  .class-detail-image .class-detail-image-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+    padding-top: 30px;
+  }
+  .class-detail-image .class-detail-image-inner .heading {
+    display: none;
+  }
+  .class-detail-image .class-detail-image-inner .cover-image img {
+    width: 100%;
+    height: auto;
+  }
+  .class-detail-full {
+    padding: 0 !important;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content > div {
+    background-color: #ffffff;
+    border-radius: 10px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    padding: 10px;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info {
+    /* Article : Class Introduce */
+    /* Article : Class Curriculum */
+    /* Article : Class Review */
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-detail-navigation {
+    gap: 7px;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-detail-navigation a {
+    font-size: 14px;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-introduce * img {
+    width: 100%;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-review .class-detail-wrap .review-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-mentor .class-detail-wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-sidebar {
+    position: static;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-sidebar .class-detail-sidebar-wrap.group-required-info .overview .class-price {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-sidebar .class-detail-sidebar-wrap.group-required-info .overview .class-price .sale {
+    margin-right: 30px;
+  }
+  .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-sidebar .class-detail-sidebar-wrap.group-required-info .overview .class-price .price-current {
+    margin-right: 53px;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 767px) {
+  .focus-class-items {
+    width: 550px;
   }
 }

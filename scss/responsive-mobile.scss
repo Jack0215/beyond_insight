@@ -2,13 +2,13 @@
 @import "reset.scss", "variables.scss", "fonts.scss";
 
 /* Responsive for Mobile*/
-@media (max-width: 767px) {
+@media (min-width: 300px) and (max-width: 767px) {
   //완료되면 지울 임시 CSS
 
   /* ############### Common CSS ############### */
 
   [class*="inner"] {
-    width: 100%;
+    width: 100% !important;
   }
   .front-header {
     h2 {
@@ -25,14 +25,21 @@
   header {
     .header-inner {
       padding: 0 10px;
-      .logo {
-        img {
+      .logo-search {
+        .logo {
+          img {
+            width: 190px;
+          }
         }
-      }
-      .search {
-        display: none;
-      }
-      .login-register-buttons {
+        .search {
+          display: none;
+        }
+        .login-register-buttons {
+          button: {
+            font-size: 13px;
+            padding: 5px;
+          }
+        }
       }
       .gnb {
         a {
@@ -52,7 +59,6 @@
         }
         .special-navi {
           white-space: nowrap;
-          width: 360px;
           overflow-y: hidden;
         }
       }
@@ -226,8 +232,8 @@
           box-shadow: none;
           height: auto;
           span {
-            font-size: 14px;
-            padding: 0px 10px;
+            font-size: 13px;
+            padding: 0px 7px;
           }
         }
       }
@@ -239,7 +245,7 @@
     .focus-class-inner {
       .focus-class-content {
         overflow-x: hidden;
-        .focus-class-items {
+        @at-root .focus-class-items {
           width: 500px;
           .focus-class-item {
             .thum {
@@ -249,12 +255,19 @@
             }
             .overview {
               h4 {
-                font-size: 14px;
+                font-size: 12px;
+              }
+              .class-info {
+                font-size: 12px;
+                color: $light-black;
               }
               .class-price {
-                transform: scale(0.8);
+                transform: scale(0.7);
                 transform-origin: left;
                 white-space: nowrap;
+              }
+              .class-review {
+                font-size: 10px;
               }
             }
           }
@@ -383,5 +396,147 @@
         }
       }
     }
+  }
+
+  /* ############## Category Main : category-main.html ######### */
+  .category-class {
+    .category-class-inner {
+      .category-class-wrap {
+        overflow-x: hidden;
+      }
+
+      .category-class-detail {
+        .category-shortcut-btn-group {
+          .btn-shortcut {
+            font-size: 12px;
+            margin-right: 3px;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  /* ############## Take Course & Cart : take-course.html ##############*/
+  .take-course {
+    padding: 0 !important;
+    .take-course-inner {
+      flex-direction: column;
+      gap: 0;
+      > div {
+        background-color: $white;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 20px;
+      }
+      .cart-wrap {
+        .cart-items {
+          .cart-item {
+            .thum {
+              width: 60px;
+            }
+            .cart-overview {
+              .cart-overview-detail {
+                flex-direction: column;
+                gap: 0;
+                .cart-overview-price {
+                  text-align: left;
+                  > * {
+                    display: inline-block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .payment {
+        border-top: 1px dashed $dim-gray;
+      }
+    }
+  }
+
+  /* ############## Class Detail : class-detail.html ##############*/
+  .class-detail-image {
+    .class-detail-image-inner {
+      flex-direction: column;
+      height: auto;
+      padding-top: 30px;
+      .heading {
+        display: none;
+      }
+      .cover-image {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .class-detail-full {
+    padding: 0 !important;
+    .class-detail-full-inner {
+      .class-detail-full-content {
+        flex-direction: column-reverse;
+        > div {
+          background-color: $white;
+          border-radius: 10px;
+          box-shadow: none;
+          padding: 10px;
+        }
+        .class-detail-info {
+          .class-detail-navigation {
+            gap: 7px;
+            a {
+              font-size: 14px;
+            }
+          }
+          /* Article : Class Introduce */
+          .class-introduce {
+            * img {
+              width: 100%;
+            }
+          }
+          /* Article : Class Curriculum */
+          /* Article : Class Review */
+          .class-review {
+            .class-detail-wrap {
+              .review-group {
+                flex-direction: column;
+              }
+            }
+          }
+          .class-mentor {
+            .class-detail-wrap {
+              flex-direction: column;
+            }
+          }
+        }
+        .class-detail-sidebar {
+          position: static;
+          .class-detail-sidebar-wrap.group-required-info {
+            .overview {
+              .class-price {
+                justify-content: flex-end;
+                .sale {
+                  margin-right: 30px;
+                }
+                .price-current {
+                  margin-right: 53px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 400px) and (max-width: 767px) {
+  .focus-class-items {
+    // border: 2px solid blue;
+    width: 550px;
   }
 }

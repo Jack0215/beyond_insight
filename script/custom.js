@@ -60,10 +60,16 @@ $(function () {
       $(this).addClass("active");
       $(this).parent().siblings().children("b").removeClass("active");
     });
+
+    $(".btn-member-primary").click(function () {
+      $(".member-login-overlay").fadeOut();
+      $(".user-alarm").show();
+      $(".login-register-buttons").hide();
+    });
   });
 
   $(".footer-include").load("/include/footer.html", function () {
-    /*Footer LNB */
+    /* Footer LNB */
     $(".link-item-title").click(function () {
       $(this).next().stop().slideToggle(300);
       $(this).toggleClass("active");
@@ -75,6 +81,15 @@ $(function () {
       $(this).next().stop().slideToggle(300);
       $(this).toggleClass("active");
     });
+  });
+
+  /* Scroll Header Fixed */
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 200) {
+      $("header").addClass("active");
+    } else {
+      $("header").removeClass("active");
+    }
   });
 
   /*The Final CountDown */
@@ -148,8 +163,22 @@ $(function () {
 
   /* Class Curriculum */
   $(".chapter-title").click(function () {
-    $(this).next().toggle();
+    $(this).next().slideToggle(200);
     $(this).toggleClass("active");
+  });
+
+  /* Class Curriculum : All Show/hide */
+  $(".btn-curriculum-fold").click(function () {
+    $(".chapter-content").slideUp(200);
+    $(this).addClass("selected");
+    $(this).siblings("button").removeClass("selected");
+    $(".chapter-title").removeClass("active");
+  });
+  $(".btn-curriculum-expand").click(function () {
+    $(".chapter-content").slideDown(200);
+    $(this).addClass("selected");
+    $(this).siblings("button").removeClass("selected");
+    $(".chapter-title").addClass("active");
   });
 
   /* Class faq */
