@@ -1,6 +1,13 @@
 // Import local SCSS Files
 @import "reset.scss", "variables.scss", "fonts.scss";
 
+/* Mixin Group */
+@mixin layout-boxshadow {
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: none;
+  padding: 10px;
+}
 /* Responsive for Mobile*/
 @media (min-width: 300px) and (max-width: 767px) {
   //완료되면 지울 임시 CSS
@@ -254,6 +261,7 @@
               }
             }
             .overview {
+              min-height: 95px;
               h4 {
                 font-size: 12px;
               }
@@ -282,6 +290,7 @@
       .best-class-content {
         .best-class-wrap {
           flex-direction: column;
+          gap: 0;
           .invite-banner {
             img {
               width: 100%;
@@ -289,11 +298,11 @@
             }
           }
           .best-class-items-outer {
+            margin-top: 10px;
             .best-class-items {
               flex-direction: column;
-              margin-bottom: 10px;
+              gap: 0;
               .best-class-item {
-                margin-bottom: -10px;
                 .overview {
                   .class-price {
                     transform: scale(0.9);
@@ -327,10 +336,10 @@
           padding: 20px;
           .banner-about {
             h1 {
-              font-size: 18px;
+              font-size: 16px;
             }
             .hash-tag {
-              font-size: 18px;
+              font-size: 15px;
             }
           }
           .banner-thum {
@@ -363,7 +372,7 @@
       .slogan-content {
         padding: 0 20px;
         h1 {
-          font-size: 24px;
+          font-size: 22px;
         }
         span {
           font-size: 16px;
@@ -409,6 +418,7 @@
         .category-shortcut-btn-group {
           .btn-shortcut {
             font-size: 12px;
+            padding: 5px 7px;
             margin-right: 3px;
             margin-bottom: 5px;
           }
@@ -424,10 +434,7 @@
       flex-direction: column;
       gap: 0;
       > div {
-        background-color: $white;
-        border-radius: 0;
-        box-shadow: none;
-        padding: 20px;
+        @include layout-boxshadow;
       }
       .cart-wrap {
         .cart-items {
@@ -480,16 +487,15 @@
       .class-detail-full-content {
         flex-direction: column-reverse;
         > div {
-          background-color: $white;
-          border-radius: 10px;
-          box-shadow: none;
-          padding: 10px;
+          @include layout-boxshadow();
         }
         .class-detail-info {
           .class-detail-navigation {
-            gap: 7px;
+            gap: 10px;
+            overflow-y: hidden;
             a {
               font-size: 14px;
+              white-space: nowrap;
             }
           }
           /* Article : Class Introduce */
@@ -499,6 +505,31 @@
             }
           }
           /* Article : Class Curriculum */
+          .class-curriculum {
+            .curriculum-accordion {
+              .accordion-item-wrap {
+                .chapter-title {
+                  font-size: 13px;
+                }
+                .chapter-content {
+                  font-size: 13px;
+                  .chapter-content-class {
+                    .class-subject {
+                      font-size: 13px;
+                    }
+                    .class-hour {
+                      .class-hour-detail {
+                        display: none;
+                      }
+                    }
+                  }
+                }
+                .chapter-hour {
+                  display: none;
+                }
+              }
+            }
+          }
           /* Article : Class Review */
           .class-review {
             .class-detail-wrap {
@@ -532,11 +563,35 @@
       }
     }
   }
+  /* ############## Front Event Banner ############## */
+  .front-event-banner {
+    width: 330px;
+    bottom: 20px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  /* ############## Login Modal ##############*/
+  .member-login-overlay {
+    .member-login {
+      width: 90%;
+      .join-member {
+      }
+      .easy-login {
+      }
+    }
+  }
+
+  /* ############## Class Share Modal ##############*/
+  .class-share-overlay {
+    .class-share {
+      width: 90%;
+    }
+  }
 }
 
 @media (min-width: 400px) and (max-width: 767px) {
   .focus-class-items {
-    // border: 2px solid blue;
     width: 550px;
   }
 }

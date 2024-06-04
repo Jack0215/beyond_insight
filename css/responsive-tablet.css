@@ -3,8 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   outline: none;
 }
 
@@ -39,7 +38,7 @@ input {
   section:not(.front-slider) {
     padding: 35px 10px;
   }
-  [class*="inner"] {
+  [class*=inner] {
     width: 100%;
   }
   header {
@@ -79,18 +78,21 @@ input {
   /* Section : Focus Class */
   .focus-class-items .slick-dots li {
     margin: 0;
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
+  }
+  .focus-class-items .slick-dots li button::before {
+    font-size: 26px;
+  }
+  .focus-class-items .slick-dots li button:hover::before {
+    color: #ed2040;
   }
   .focus-class-items .slick-dots li.slick-active button:before {
     color: #ed2040;
   }
   /* Section : Best Class */
   .best-class .best-class-inner .best-class-content .best-class-wrap {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    flex-direction: column-reverse;
   }
   .best-class .best-class-inner .best-class-content .best-class-wrap .invite-banner {
     display: none;
@@ -129,10 +131,7 @@ input {
   }
   /* ############## Take Course & Cart : take-course.html ##############*/
   .take-course .take-course-inner {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   /* ############## Class Detail : class-detail.html ##############*/
   .class-detail-image .class-detail-image-inner {
@@ -148,10 +147,7 @@ input {
     height: 250px;
   }
   .class-detail-full .class-detail-full-inner .class-detail-full-content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    flex-direction: column-reverse;
   }
   .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-info .class-introduce * img {
     width: 100%;
@@ -160,9 +156,7 @@ input {
     position: static;
   }
   .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-sidebar .class-detail-sidebar-wrap.group-required-info .overview .class-price {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    justify-content: flex-end;
   }
   .class-detail-full .class-detail-full-inner .class-detail-full-content .class-detail-sidebar .class-detail-sidebar-wrap.group-required-info .overview .class-price .sale {
     margin-right: 30px;

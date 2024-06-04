@@ -92,6 +92,19 @@ $(function () {
     }
   });
 
+  /* Gototop Action */
+  $(".gototop").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 500);
+  });
+  /* Scroll Show Gototop */
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 1000) {
+      $(".gototop").addClass("active");
+    } else {
+      $(".gototop").removeClass("active");
+    }
+  });
+
   /*The Final CountDown */
   $("#early-bird-countdown").countdown("2024/03/31", function (event) {
     $(this).html(
@@ -117,18 +130,33 @@ $(function () {
   });
 
   /* Take Course & Cart Check All Function */
-  $(".cart-item .btn-clear ").click(function () {
-    $(this).parents(".cart-item").hide();
-  });
+  // $(".cart-item .btn-clear ").click(function () {
+  //   $(this).parents(".cart-item").hide();
+  // });
 
-  $(".cart-wrap .btn-all-clear").click(function () {
-    $(".cart-item").hide();
-  });
+  // $(".cart-wrap .btn-all-clear").click(function () {
+  //   $(".cart-item").hide();
+  // });
 
   $(".cart-chk-all").click(function () {
     $(".check-status .cart-chk").prop("checked", this.checked);
   });
 
+  $(".cart-item .btn-clear").click(function () {
+    $(this).parents(".cart-item").remove();
+    if ($(".cart-item").length === 0) {
+      $(".cart-item-empty").show();
+      $(".cart-header").hide();
+    }
+  });
+
+  $(".btn-all-clear").click(function () {
+    $(".cart-item").remove();
+    if ($(".cart-item").length === 0) {
+      $(".cart-item-empty").show();
+      $(".cart-header").hide();
+    }
+  });
   /* Class Share Modal */
   $(".btn-sidebar-badge.share").click(function () {
     $(".class-share-overlay").fadeIn();
@@ -190,6 +218,32 @@ $(function () {
 
     $(this).next().slideToggle();
   });
+
+  /* Front Event Banner */
+  $(".close-buttons a").click(function () {
+    $(".front-event-banner").fadeOut();
+  });
+
+  /* Cart Confirm */
+  $(".btn-primary.btn-cart").click(function () {
+    $(".cart-confirm").show();
+
+    setTimeout(function () {
+      $(".cart-confirm").hide();
+    }, 3000);
+  });
+  $(".btn-close").click(function () {
+    $(".cart-confirm").hide();
+  });
+
+  /* Class zzim */
+  $(".zzim").click(function () {
+    $(this).children().toggleClass("bi-heart bi-heart-fill");
+    $(this).children().css({
+      color: "#FF4C79",
+    });
+  });
+
   /* Front Slider */
   $(".front-slider-items").slick({
     infinite: true, // 마지막 슬라이드 다음에 처음으로 돌아가기
@@ -227,7 +281,7 @@ $(function () {
     slidesToShow: 4, // 최초에 보이는 개수
     slidesToScroll: 2, // 슬라이드할 때 몇개씩 슬라이드할지 개수
     arrows: true,
-    dots: false,
+    dots: true,
     responsive: [
       {
         breakpoint: 1024,
